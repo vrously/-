@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../font-icon/iconfont.css"/>
+    <link rel="stylesheet" href="../css/manger.css"/>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            $(".manger-menu .main-menu").each(function(){
+           $(this).click(function(){
+               var lists=  $(this).parent(".item-list").siblings(".item-list").children(".main-menu").siblings();
+               lists.slideUp(300);
+               var items = $(this).siblings();
+               if(items.css("display")!="none"){
+                items.slideUp(300)
+                return;
+               }
+                items.slideDown(300)
+           })
+       })
+        })
+    </script>
+</head>
+<body>
+    <div class="container-box">
+        <div class="left-menu">
+            <div class="title">欢迎你:xxx</div>
+            <div class="manger-menu">
+                <div class="manger-title">管理面板</div>
+                <div class="item-list">
+                    <div class="main-menu">
+                        <span class="iconfont ">&#xe603;</span>
+                        学生管理
+                        <span class="iconfont fr">&#xe62d;</span>
+                    </div>
+                    <div class="hover-item">
+                        <span class="iconfont">&#xe63e;</span>
+                        <a href="#">学生信息</a>
+                    </div>
+                </div>
+                <div class="item-list">
+                    <div class="main-menu">
+                        <span class="iconfont">&#xe613;</span>
+                        个人资料
+                        <span class="iconfont fr">&#xe62d;</span>
+                    </div>
+                    <div class="hover-item">
+                        <span class="iconfont">&#xe618;</span>
+                        <a href="#">个人信息</a>
+                    </div>
+                    <div class="item">
+                        <span class="iconfont">&#xe625;</span>
+                        <a href="add.html" target="main-page">信息修改</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right-menu">
+                <iframe height="100%" width="100%"  src="list.html" name="main-page"  />
+        </div>
+    </div>
+   
+</body>
+</html>
